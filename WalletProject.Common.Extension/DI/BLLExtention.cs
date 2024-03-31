@@ -3,7 +3,7 @@ using WalletProject.BLLlogic.Extention;
 using WalletProject.BLLLogic;
 namespace WalletProject.Common.Extension.DI
 {
-    public static class UserLogicExtention
+    public static class BLLExtention
     {
         public static void ConfigureBll( this IServiceCollection services)
         {

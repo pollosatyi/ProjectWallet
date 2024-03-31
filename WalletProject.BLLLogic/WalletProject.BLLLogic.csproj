@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WalletProject.BLLlogic.Extention\WalletProject.BLLlogic.Extention.csproj" />
+    <ProjectReference Include="..\WalletProject.DAL.Repositories.Contracts\WalletProject.DAL.Repositories.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

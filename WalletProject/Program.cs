@@ -14,6 +14,7 @@ namespace WalletProject
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.ConfigureBll();
+            builder.Services.ConfigureDll(builder.Configuration);
 
             var app = builder.Build();
 
