@@ -36,7 +36,7 @@ namespace WalletProject.Controllers
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void  Delete(int id)
         {
         }
     }
