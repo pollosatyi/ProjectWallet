@@ -11,14 +11,15 @@ namespace WalletProject.DAL.Repositories
         {
             _dbContext = dbContext;
         }
-        public Task CreateAsync(User user)
+        public async Task CreateAsync(User user)
         {
             try
             {
-
+                await _dbContext.Users.AddAsync(user);
+                await _dbContext.SaveChangesAsync();
             }catch (Exception ex)
             {
-
+                throw new Exception("UserRepository CreateAsync не работает");
             }
         }
     }
