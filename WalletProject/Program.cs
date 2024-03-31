@@ -1,4 +1,4 @@
-
+using WalletProject.Common.Extension.DI;
 namespace WalletProject
 {
     public class Program
@@ -13,6 +13,7 @@ namespace WalletProject
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.ConfigureBll();
 
             var app = builder.Build();
 

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WalletProject.Common.Entities\WalletProject.Common.Entities.csproj" />
+    <ProjectReference Include="..\WalletProject.Common.Extension\WalletProject.Common.Extension.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,9 +5,9 @@ namespace WalletProject.Common.Extension.DI
 {
     public static class UserLogicExtention
     {
-        public static IServiceCollection ConfigureBll( this IServiceCollection services)
+        public static void ConfigureBll( this IServiceCollection services)
         {
-            return services.AddScoped<IUserLogic, UserLogic>();
+            services.AddScoped<IUserLogic, UserLogic>();
         }
     }
 }
