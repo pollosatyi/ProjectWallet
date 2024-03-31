@@ -33,7 +33,7 @@ namespace WalletProject.BLLLogic
                 Password = GetHashedPassword(userInputModel.Password)
 
             };
-            _userRepository.CreateAsync(user);
+            await _userRepository.CreateAsync(user);
 
         }
 
