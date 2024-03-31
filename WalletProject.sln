@@ -15,6 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{14CD8E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletProject.Common.Entities", "WalletProject.Common.Entities\WalletProject.Common.Entities.csproj", "{1CE8C4B4-76BB-41F3-80E2-6E8F1CE937DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletProject.Common.Extension", "WalletProject.Common.Extension\WalletProject.Common.Extension.csproj", "{D35B2DBE-D628-4014-8845-5888F6F6985A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletProject.BLLLogic", "WalletProject.BLLLogic\WalletProject.BLLLogic.csproj", "{33791BDF-72ED-48DE-949C-CF56736527AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WalletProject.BLLlogic.Extention", "WalletProject.BLLlogic.Extention\WalletProject.BLLlogic.Extention.csproj", "{DE781728-69F6-4F6B-9022-0B8DFFFE1F29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +35,18 @@ Global
 		{1CE8C4B4-76BB-41F3-80E2-6E8F1CE937DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CE8C4B4-76BB-41F3-80E2-6E8F1CE937DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CE8C4B4-76BB-41F3-80E2-6E8F1CE937DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35B2DBE-D628-4014-8845-5888F6F6985A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35B2DBE-D628-4014-8845-5888F6F6985A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35B2DBE-D628-4014-8845-5888F6F6985A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35B2DBE-D628-4014-8845-5888F6F6985A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33791BDF-72ED-48DE-949C-CF56736527AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33791BDF-72ED-48DE-949C-CF56736527AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33791BDF-72ED-48DE-949C-CF56736527AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33791BDF-72ED-48DE-949C-CF56736527AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE781728-69F6-4F6B-9022-0B8DFFFE1F29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE781728-69F6-4F6B-9022-0B8DFFFE1F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE781728-69F6-4F6B-9022-0B8DFFFE1F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE781728-69F6-4F6B-9022-0B8DFFFE1F29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +54,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{81BAA14D-C68F-4210-88D9-6F95E06DF499} = {79ED17D4-CB9F-484C-BA55-440B77BDFC8A}
 		{1CE8C4B4-76BB-41F3-80E2-6E8F1CE937DE} = {14CD8E71-EAE9-4B3F-A393-E766D904201B}
+		{D35B2DBE-D628-4014-8845-5888F6F6985A} = {14CD8E71-EAE9-4B3F-A393-E766D904201B}
+		{33791BDF-72ED-48DE-949C-CF56736527AF} = {359DEE1F-5010-45CB-B450-0AD75FB5BC0D}
+		{DE781728-69F6-4F6B-9022-0B8DFFFE1F29} = {359DEE1F-5010-45CB-B450-0AD75FB5BC0D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0BBC494-DF5C-4CA8-8768-119BA7C49E2E}
