@@ -1,4 +1,6 @@
-﻿namespace WalletProject.Common.Entities.Users.UserInputModels
+﻿using WalletProject.Common.Entities.Enum;
+
+namespace WalletProject.Common.Entities.Users.UserInputModels
 {
     public class UserInputModel
     {
@@ -9,6 +11,8 @@
         public string Phone { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
+
+        public Sex Sex { get; set; }
 
         public string Password { get; set; }
     }

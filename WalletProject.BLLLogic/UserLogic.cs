@@ -30,6 +30,7 @@ namespace WalletProject.BLLLogic
                 Phone = userInputModel.Phone,
                 Age = userInputModel.Age,
                 Email = userInputModel.Email,
+                Sex = userInputModel.Sex,
                 Password = GetHashedPassword(userInputModel.Password)
 
             };

@@ -1,4 +1,6 @@
-﻿namespace WalletProject.Common.Entities.Users.DB
+﻿using WalletProject.Common.Entities.Enum;
+
+namespace WalletProject.Common.Entities.Users.DB
 {
     public class User
     {
@@ -12,5 +14,7 @@
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public Sex Sex { get; set; }
     }
 }
