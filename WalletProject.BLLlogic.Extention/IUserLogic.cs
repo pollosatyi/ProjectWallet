@@ -6,6 +6,6 @@ namespace WalletProject.BLLlogic.Extention
     {
         Task CreateAsync(UserInputModel userInputModel);
 
-        Task GetAsync(int id);
+        Task GetAsync(Guid id);
     }
 }

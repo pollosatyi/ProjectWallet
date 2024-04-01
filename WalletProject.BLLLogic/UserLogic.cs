@@ -37,7 +37,7 @@ namespace WalletProject.BLLLogic
 
         }
 
-        public async Task GetAsync(int id)
+        public async Task GetAsync(Guid id)
         {
             var user = await _userRepository.GetAsync(id);
         }

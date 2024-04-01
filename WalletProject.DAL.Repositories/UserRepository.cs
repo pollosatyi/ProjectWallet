@@ -25,7 +25,7 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
-        public async Task<User>GetAsync(long id)
+        public async Task<User>GetAsync(Guid id)
         {
             try
             {
