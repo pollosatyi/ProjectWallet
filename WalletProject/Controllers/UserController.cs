@@ -27,9 +27,9 @@ namespace WalletProject.Controllers
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task Get(int id)
         {
-            return "value";
+             await _userLogic.GetAsync(id);
         }
 
         // POST api/<UserController>

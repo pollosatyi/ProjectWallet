@@ -5,5 +5,7 @@ namespace WalletProject.BLLlogic.Extention
     public interface IUserLogic
     {
         Task CreateAsync(UserInputModel userInputModel);
+
+        Task GetAsync(int id);
     }
 }

@@ -1,5 +1,7 @@
-﻿using WalletProject.Common.Entities.Users.DB;
+﻿using Microsoft.EntityFrameworkCore;
+using WalletProject.Common.Entities.Users.DB;
 using WalletProject.DAL.Repositories.Contracts;
+
 
 namespace WalletProject.DAL.Repositories
 {
@@ -20,6 +22,18 @@ namespace WalletProject.DAL.Repositories
             }catch (Exception ex)
             {
                 throw new Exception("UserRepository CreateAsync не работает");
+            }
+        }
+
+        public async Task<User>GetAsync(long id)
+        {
+            try
+            {
+                return await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Некорретный номер");
             }
         }
     }

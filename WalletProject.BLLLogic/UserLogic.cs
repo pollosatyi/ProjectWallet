@@ -37,6 +37,11 @@ namespace WalletProject.BLLLogic
 
         }
 
+        public async Task GetAsync(int id)
+        {
+            var user = await _userRepository.GetAsync(id);
+        }
+
         private string GetHashedPassword(string password)
         {
             byte[] salt;
