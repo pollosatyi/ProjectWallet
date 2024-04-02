@@ -13,8 +13,10 @@ namespace WalletProject
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.ConfigureBll();
-            builder.Services.ConfigureDll(builder.Configuration);
+            builder.Services.ConfigureBllUser();
+            builder.Services.ConfigureBllWallet();
+            builder.Services.ConfigureDllUser(builder.Configuration);
+            builder.Services.ConfigureDllWallet(builder.Configuration);
 
             var app = builder.Build();
 
