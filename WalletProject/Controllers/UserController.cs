@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalletProject.BLLlogic.Extention;
 using WalletProject.Common.Entities.Users.UserInputModels;
+using WalletProject.Common.Entities.Users.UserUpdateModels;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,9 +35,9 @@ namespace WalletProject.Controllers
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public async Task PutAsync(Guid id, [FromBody])
+        public async Task PutAsync(Guid id, [FromBody]UserUpdateModel userUpdateModel)
         {
-            
+            await _userLogic.UpdateAsync(id,userUpdateModel);
 
         }
 

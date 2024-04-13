@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WalletProject.Common.Entities.Users.DB;
+using WalletProject.Common.Entities.Users.UserUpdateModels;
 using WalletProject.DAL.Repositories.Contracts;
 
 
@@ -54,12 +55,17 @@ namespace WalletProject.DAL.Repositories
 
         }
 
-        public void Update(string name)
+        public void UpdateAsync(Guid id,UserUpdateModel userUpdateModel )
         {
             try
             {
-                var user = _dbContext.Users.FirstOrDefault(x => x.FirstName == name);
-                user.FirstName = "sdfsfds";
+                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+                user.FirstName = userUpdateModel.FirstName;
+                user.LastName = userUpdateModel.LastName;
+                user.MiddleName = userUpdateModel.MiddleName;
+                user.Phone = userUpdateModel.Phone;
+                user.Email = userUpdateModel.Email;
+
                 _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -67,5 +73,10 @@ namespace WalletProject.DAL.Repositories
                 throw new Exception("Данные пользователя не обновились");
             }
         }
+
+        //public Task UpdateAsync(User userUpdate)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

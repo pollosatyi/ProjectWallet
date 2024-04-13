@@ -8,6 +8,6 @@ namespace WalletProject.DAL.Repositories.Contracts
         Task<User> GetAsync(string  name);
         void Delete(string name);
         void Update(string name);
-
+        Task UpdateAsync(Guid id,User userUpdate);
     }
 }

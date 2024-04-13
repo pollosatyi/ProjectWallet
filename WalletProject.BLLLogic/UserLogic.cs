@@ -50,7 +50,7 @@ namespace WalletProject.BLLLogic
             var user = await _userRepository.GetAsync(name);
         }
 
-        public async Task UpdateAsync(UserUpdateModel userUpdateModel)
+        public async Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel)
         {
             User userUpdate = new User()
             {
@@ -60,7 +60,7 @@ namespace WalletProject.BLLLogic
                 Phone = userUpdateModel.Phone,
                 Email = userUpdateModel.Email,
             };
-            await _userRepository.CreateAsync(userUpdate);
+            await _userRepository.UpdateAsync(id,userUpdate);
         }
 
         private string GetHashedPassword(string password)
