@@ -5,9 +5,10 @@ namespace WalletProject.DAL.Repositories
 {
     public class DbContextWallet : DbContext
     {
-        public DbSet<Wallet> wallets {  get; set; }
+        public DbSet<Wallet> wallets { get; set; }
 
-        public DbContextWallet(DbContextOptions<DbContextWallet> options) : base(options) {
+        public DbContextWallet(DbContextOptions<DbContextWallet> options) : base(options)
+        {
             Database.EnsureCreated();
         }
     }

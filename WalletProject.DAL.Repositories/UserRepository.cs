@@ -55,7 +55,7 @@ namespace WalletProject.DAL.Repositories
 
         }
 
-        public async Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel )
+        public async Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel)
         {
             try
             {

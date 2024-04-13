@@ -21,31 +21,31 @@ namespace WalletProject.Controllers
 
         // GET api/<UserController>/5
         [HttpGet("{name}")]
-        public async Task GetFirstName([FromBody]String name)
+        public async Task GetFirstName([FromBody] String name)
         {
-             await _userLogic.GetAsync(name);
+            await _userLogic.GetAsync(name);
         }
 
         // POST api/<UserController>
         [HttpPost]
         public async Task Post([FromBody] UserInputModel userInputModel)
         {
-           await _userLogic.CreateAsync(userInputModel);
+            await _userLogic.CreateAsync(userInputModel);
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public async Task PutAsync(Guid id, [FromBody]UserUpdateModel userUpdateModel)
+        public async Task PutAsync(Guid id, [FromBody] UserUpdateModel userUpdateModel)
         {
-            await _userLogic.UpdateAsync(id,userUpdateModel);
+            await _userLogic.UpdateAsync(id, userUpdateModel);
 
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{name}")]
-        public void Delete([FromBody]string name)
+        public void Delete([FromBody] string name)
         {
-             _userLogic.Delete(name);
+            _userLogic.Delete(name);
         }
     }
 }

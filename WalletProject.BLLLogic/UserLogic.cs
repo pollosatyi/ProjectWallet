@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using WalletProject.BLLlogic.Extention;
 using WalletProject.Common.Entities.Users.DB;
 using WalletProject.Common.Entities.Users.UserInputModels;
@@ -50,7 +45,7 @@ namespace WalletProject.BLLLogic
             var user = await _userRepository.GetAsync(name);
         }
 
-        public async Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel)
+        public async Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel)
         {
             UserUpdateModel userUpdate = new UserUpdateModel()
             {
@@ -60,7 +55,7 @@ namespace WalletProject.BLLLogic
                 Phone = userUpdateModel.Phone,
                 Email = userUpdateModel.Email,
             };
-            await _userRepository.UpdateAsync(id,userUpdate);
+            await _userRepository.UpdateAsync(id, userUpdate);
         }
 
         private string GetHashedPassword(string password)

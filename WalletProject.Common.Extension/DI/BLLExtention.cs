@@ -5,7 +5,7 @@ namespace WalletProject.Common.Extension.DI
 {
     public static class BLLExtention
     {
-        public static void ConfigureBllUser( this IServiceCollection services)
+        public static void ConfigureBllUser(this IServiceCollection services)
         {
             services.AddScoped<IUserLogic, UserLogic>();
         }

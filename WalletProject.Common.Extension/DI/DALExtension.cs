@@ -9,9 +9,9 @@ namespace WalletProject.Common.Extension.DI
 {
     public static class DALExtension
     {
-        public static void ConfigureDllUser(this IServiceCollection services,IConfiguration configuration )
+        public static void ConfigureDllUser(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             string connection = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBContext>(options => options.UseNpgsql(connection));
 

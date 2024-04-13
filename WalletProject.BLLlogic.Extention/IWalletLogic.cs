@@ -4,6 +4,6 @@ namespace WalletProject.BLLlogic.Extention
 {
     public interface IWalletLogic
     {
-         Task CreateAsync(WalletInputModel walletInputModel);
+        Task CreateAsync(WalletInputModel walletInputModel);
     }
 }

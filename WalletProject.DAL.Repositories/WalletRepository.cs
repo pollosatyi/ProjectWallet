@@ -16,10 +16,11 @@ namespace WalletProject.DAL.Repositories
         {
             try
             {
-             await _dbContextWallet.wallets.AddAsync(wallet);
-             await _dbContextWallet.SaveChangesAsync();
+                await _dbContextWallet.wallets.AddAsync(wallet);
+                await _dbContextWallet.SaveChangesAsync();
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception("WalletRepository не работает");
             }

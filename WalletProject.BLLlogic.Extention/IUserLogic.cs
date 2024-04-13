@@ -7,10 +7,10 @@ namespace WalletProject.BLLlogic.Extention
     {
         Task CreateAsync(UserInputModel userInputModel);
 
-        Task GetAsync(string  name);
+        Task GetAsync(string name);
 
         void Delete(string name);
-        
-        Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel);
+
+        Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel);
     }
 }
