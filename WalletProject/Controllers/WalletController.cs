@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalletProject.BLLlogic.Extention;
-using WalletProject.BLLLogic;
 using WalletProject.Common.Entities.Wallets.WalletInputModels;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
