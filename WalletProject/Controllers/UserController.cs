@@ -18,18 +18,11 @@ namespace WalletProject.Controllers
         }
 
 
-        // GET: api/<UserController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
         // GET api/<UserController>/5
-        [HttpGet("{id}")]
-        public async Task Get(Guid id)
+        [HttpGet("{name}")]
+        public async Task GetFirstName([FromBody]String name)
         {
-             await _userLogic.GetAsync(id);
+             await _userLogic.GetAsync(name);
         }
 
         // POST api/<UserController>
@@ -41,14 +34,17 @@ namespace WalletProject.Controllers
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task PutAsync(Guid id, [FromBody])
         {
+            
+
         }
 
         // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{name}")]
+        public void Delete([FromBody]string name)
         {
+             _userLogic.Delete(name);
         }
     }
 }

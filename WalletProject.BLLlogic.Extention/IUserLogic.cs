@@ -1,4 +1,5 @@
 ﻿using WalletProject.Common.Entities.Users.UserInputModels;
+using WalletProject.Common.Entities.Users.UserUpdateModels;
 
 namespace WalletProject.BLLlogic.Extention
 {
@@ -6,6 +7,10 @@ namespace WalletProject.BLLlogic.Extention
     {
         Task CreateAsync(UserInputModel userInputModel);
 
-        Task GetAsync(Guid id);
+        Task GetAsync(string  name);
+
+        void Delete(string name);
+        
+        Task UpdateAsync(UserUpdateModel userUpdateModel);
     }
 }
