@@ -15,4 +15,4 @@ namespace WalletProject.Common.Entities.Users.UserUpdateModels
         public string Email { get; set; }
     }
 }
-}
+

@@ -11,6 +11,6 @@ namespace WalletProject.BLLlogic.Extention
 
         void Delete(string name);
         
-        Task UpdateAsync(UserUpdateModel userUpdateModel);
+        Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel);
     }
 }

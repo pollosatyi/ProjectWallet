@@ -52,7 +52,7 @@ namespace WalletProject.BLLLogic
 
         public async Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel)
         {
-            User userUpdate = new User()
+            UserUpdateModel userUpdate = new UserUpdateModel()
             {
                 FirstName = userUpdateModel.FirstName,
                 LastName = userUpdateModel.LastName,

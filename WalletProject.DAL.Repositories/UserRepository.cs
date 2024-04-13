@@ -55,7 +55,7 @@ namespace WalletProject.DAL.Repositories
 
         }
 
-        public void UpdateAsync(Guid id,UserUpdateModel userUpdateModel )
+        public async Task UpdateAsync(Guid id,UserUpdateModel userUpdateModel )
         {
             try
             {
@@ -74,9 +74,5 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
-        //public Task UpdateAsync(User userUpdate)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
