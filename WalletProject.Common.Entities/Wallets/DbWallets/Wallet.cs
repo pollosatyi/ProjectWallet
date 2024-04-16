@@ -1,4 +1,5 @@
 ﻿using WalletProject.Common.Entities.Users.DB;
+using WalletProject.Common.Entities.Wallets.Accounts;
 
 namespace WalletProject.Common.Entities.Wallets.DbWallet
 {
@@ -6,12 +7,9 @@ namespace WalletProject.Common.Entities.Wallets.DbWallet
     {
         public Guid Id { get; set; }
         public User user { get; set; }
-        public List<BankA>
+        public List<BankAccount> accounts { get; set; }
 
-        //public double Rub { get; set; }
-        //public double Usd { get; set; }
-        //public double Eur { get; set; }
-        //public double SumWallet { get; set; }
+        
 
     }
 }
