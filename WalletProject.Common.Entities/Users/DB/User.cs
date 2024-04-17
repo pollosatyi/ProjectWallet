@@ -1,4 +1,5 @@
 ﻿using WalletProject.Common.Entities.Enum;
+using WalletProject.Common.Entities.Wallets.DbWallet;
 
 namespace WalletProject.Common.Entities.Users.DB
 {
@@ -13,5 +14,6 @@ namespace WalletProject.Common.Entities.Users.DB
         public string Email { get; set; }
         public string Password { get; set; }
         public Sex Sex { get; set; }
+        public Wallet wallet { get; set; }
     }
 }

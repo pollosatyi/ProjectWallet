@@ -6,7 +6,6 @@ namespace WalletProject.Common.Entities.Wallets.DbWallet
     public class Wallet
     {
         public Guid Id { get; set; }
-        public User user { get; set; }
         public List<BankAccount> accounts { get; set; }
 
         
