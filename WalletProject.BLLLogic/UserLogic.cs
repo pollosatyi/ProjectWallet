@@ -40,9 +40,10 @@ namespace WalletProject.BLLLogic
             _userRepository.Delete(name);
         }
 
-        public async Task GetAsync(string name)
+        public async Task<User> GetAsync(string name)
         {
             var user = await _userRepository.GetAsync(name);
+            return user;
         }
 
         public async Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalletProject.BLLlogic.Extention;
+using WalletProject.Common.Entities.Users.DB;
 using WalletProject.Common.Entities.Users.UserInputModels;
 using WalletProject.Common.Entities.Users.UserUpdateModels;
 
@@ -21,9 +22,9 @@ namespace WalletProject.Controllers
 
         // GET api/<UserController>/5
         [HttpGet("{name}")]
-        public async Task GetFirstName(string name)
+        public async Task<User> GetFirstName(string name)
         {
-            await _userLogic.GetAsync(name);
+            return await _userLogic.GetAsync(name);
         }
 
         // POST api/<UserController>
