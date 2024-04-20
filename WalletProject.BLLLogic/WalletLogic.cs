@@ -18,9 +18,7 @@ namespace WalletProject.BLLLogic
         {
             Wallet wallet = new Wallet()
             {
-                Rub = walletInputModel.Rub,
-                Usd = walletInputModel.Usd,
-                Eur = walletInputModel.Eur
+                 
             };
             await _walletRepository.CreateAsync(wallet);
         }

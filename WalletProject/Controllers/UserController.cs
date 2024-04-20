@@ -21,7 +21,7 @@ namespace WalletProject.Controllers
 
         // GET api/<UserController>/5
         [HttpGet("{name}")]
-        public async Task GetFirstName([FromBody] String name)
+        public async Task GetFirstName(string name)
         {
             await _userLogic.GetAsync(name);
         }

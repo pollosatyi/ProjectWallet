@@ -11,9 +11,7 @@ namespace WalletProject.Common.Entities.Users.UserInputModels
         public string Phone { get; set; }
         public int Age { get; set; }
         public string Email { get; set; }
-
         public Sex Sex { get; set; }
-
         public string Password { get; set; }
     }
 }
