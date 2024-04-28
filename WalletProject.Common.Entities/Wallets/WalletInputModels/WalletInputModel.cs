@@ -1,11 +1,11 @@
-﻿
-using WalletProject.Common.Entities.Wallets.Accounts;
+﻿using WalletProject.Common.Entities.Wallets.Accounts.BankAccountModels;
+
 
 namespace WalletProject.Common.Entities.Wallets.WalletInputModels
 {
     public class WalletInputModel
     {
-        public BankAccount bankAccount { get; set; }
+        public BankAccountModel bankAccountModel { get; set; }
         
 
     }

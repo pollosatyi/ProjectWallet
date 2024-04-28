@@ -66,7 +66,7 @@ namespace WalletProject.DAL.Repositories
                 user.Phone = userUpdateModel.Phone;
                 user.Email = userUpdateModel.Email;
 
-                _dbContext.SaveChangesAsync();
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
