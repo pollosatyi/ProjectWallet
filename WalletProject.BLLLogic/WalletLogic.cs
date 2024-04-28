@@ -19,6 +19,7 @@ namespace WalletProject.BLLLogic
             Wallet wallet = new Wallet()
             {
 
+
                  
             };
             await _walletRepository.CreateAsync(wallet);
