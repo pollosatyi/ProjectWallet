@@ -10,8 +10,15 @@ namespace WalletProject.Common.Entities.Wallets.Accounts.BankAccountModels
     public class BankAccountModel
     {
         
-        public int Currency { get; set; }
+        public Currency Currency { get; set; }
 
         public double Balance { get; set; }
+
+        public BankAccountModel(Currency currency=(Currency)1,double balance = 0)
+        {
+            Currency = currency;
+            Balance = balance;
+            
+        }
     }
 }

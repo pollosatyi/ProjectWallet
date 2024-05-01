@@ -9,6 +9,12 @@ namespace WalletProject.Common.Entities.Wallets.Accounts.BankAccounts
 
         public double Balance { get; set; }
 
+        public BankAccount(Currency currency=(Currency)1,double balance=0)
+        {
+            Currency = currency;
+            Balance=balance;
+        }
+
     }
 
 

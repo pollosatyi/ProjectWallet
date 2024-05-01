@@ -1,4 +1,5 @@
 ﻿using WalletProject.BLLlogic.Extention;
+using WalletProject.Common.Entities.Wallets.Accounts.BankAccounts;
 using WalletProject.Common.Entities.Wallets.DbWallet;
 using WalletProject.Common.Entities.Wallets.WalletInputModels;
 using WalletProject.DAL.Repositories.Contracts;
@@ -16,9 +17,13 @@ namespace WalletProject.BLLLogic
 
         public async Task CreateAsync(WalletInputModel walletInputModel)
         {
-            Wallet wallet = new Wallet()
+            //BankAccount bankAccount = new BankAccount();
+            //var AccountsInput = new List<BankAccount>();
+            //AccountsInput.Add(bankAccount);
+            Wallet wallet = new Wallet(walletInputModel.BankAccountModel.Currency,walletInputModel.BankAccountModel.Balance)
             {
-
+                
+              
 
                  
             };
