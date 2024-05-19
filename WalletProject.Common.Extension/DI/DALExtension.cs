@@ -20,7 +20,7 @@ namespace WalletProject.Common.Extension.DI
         {
             services.AddScoped<IWalletRepository, WalletRepository>();
             string connection = configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<DbContextWallet>(options => options.UseNpgsql(connection));
+            services.AddDbContext<DbContext>(options => options.UseNpgsql(connection));
 
         }
     }

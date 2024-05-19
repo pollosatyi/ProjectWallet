@@ -5,19 +5,19 @@ namespace WalletProject.DAL.Repositories
 {
     public class WalletRepository : IWalletRepository
     {
-        private readonly DbContextWallet _dbContextWallet;
+        private readonly DBContext _dbContext;
 
-        public WalletRepository(DbContextWallet dbContextWallet)
+        public WalletRepository(DBContext dbContext)
         {
-            _dbContextWallet = dbContextWallet;
+            _dbContext = dbContext;
         }
 
         public async Task CreateAsync(Wallet wallet)
         {
             try
             {
-                await _dbContextWallet.wallets.AddAsync(wallet);
-                await _dbContextWallet.SaveChangesAsync();
+                await _dbContext.Wallets.AddAsync(wallet);
+                await _dbContext.SaveChangesAsync();
 
             }
             catch (Exception ex)

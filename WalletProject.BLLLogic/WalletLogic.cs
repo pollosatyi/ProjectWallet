@@ -17,16 +17,9 @@ namespace WalletProject.BLLLogic
 
         public async Task CreateAsync(WalletInputModel walletInputModel)
         {
-            //BankAccount bankAccount = new BankAccount();
-            //var AccountsInput = new List<BankAccount>();
-            //AccountsInput.Add(bankAccount);
-            Wallet wallet = new Wallet(walletInputModel.BankAccountModel.Currency,walletInputModel.BankAccountModel.Balance)
-            {
-                
-              
+            Wallet wallet = new Wallet();
 
-                 
-            };
+            
             await _walletRepository.CreateAsync(wallet);
         }
 
