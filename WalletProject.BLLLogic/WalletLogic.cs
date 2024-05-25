@@ -33,9 +33,16 @@ namespace WalletProject.BLLLogic
             await _walletRepository.CreateAsync(wallet);
         }
 
-        public Task<Wallet> GetAsync(Guid id)
+        public async Task<Wallet> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var wallet = await _walletRepository.GetWalletAsync(id);
+            return wallet;
+            
+        }
+
+        public async Task UpdateAsync(Guid idWallet,Guid idAccount, WalletInputModel walletInputModel)
+        {
+           await _walletRepository.UpdateRepositoryAsync(idWallet,idAccount,walletInputModel);
         }
     }
 }

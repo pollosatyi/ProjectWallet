@@ -10,7 +10,7 @@ namespace WalletProject.Common.Entities.Wallets.DbWallet
         public Guid Id { get; set; }
         public List<BankAccount> Accounts { get; set; }=new List<BankAccount>();
 
-
+        
        
 
        

@@ -7,5 +7,6 @@ namespace WalletProject.BLLlogic.Extention
     {
         Task CreateAsync(WalletInputModel walletInputModel);
         Task<Wallet> GetAsync(Guid id);
+        Task UpdateAsync(Guid idWallet,Guid idAccount,WalletInputModel walletInputModel);
     }
 }

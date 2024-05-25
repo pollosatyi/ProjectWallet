@@ -36,8 +36,9 @@ namespace WalletProject.Controllers
 
         // PUT api/<WalletController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task Put(Guid idWallet,Guid idAccount, [FromBody] WalletInputModel walletInputModel)
         {
+            await _walletLogic.UpdateAsync(idWallet,idAccount, walletInputModel);
         }
 
         // DELETE api/<WalletController>/5

@@ -48,15 +48,7 @@ namespace WalletProject.BLLLogic
 
         public async Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel)
         {
-            UserUpdateModel userUpdate = new UserUpdateModel()
-            {
-                FirstName = userUpdateModel.FirstName,
-                LastName = userUpdateModel.LastName,
-                MiddleName = userUpdateModel.MiddleName,
-                Phone = userUpdateModel.Phone,
-                Email = userUpdateModel.Email,
-            };
-            await _userRepository.UpdateAsync(id, userUpdate);
+            await _userRepository.UpdateAsync(id, userUpdateModel);
         }
 
         private string GetHashedPassword(string password)
