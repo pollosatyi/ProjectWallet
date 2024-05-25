@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalletProject.BLLlogic.Extention;
+using WalletProject.Common.Entities.Wallets.DbWallet;
 using WalletProject.Common.Entities.Wallets.WalletInputModels;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,17 +18,13 @@ namespace WalletProject.Controllers
             _walletLogic = walletLogic;
         }
         // GET: api/<WalletController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+       
 
         // GET api/<WalletController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<Wallet> Get(Guid id)
         {
-            return "value";
+            return await _walletLogic.GetAsync(id);
         }
 
         // POST api/<WalletController>
