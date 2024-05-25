@@ -15,7 +15,7 @@ namespace WalletProject.Controllers
 
         public WalletController(IWalletLogic walletLogic)
         {
-            _walletLogic = walletLogic;
+            _walletLogic = walletLogic; 
         }
         // GET: api/<WalletController>
        
