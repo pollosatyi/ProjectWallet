@@ -16,7 +16,7 @@ namespace WalletProject.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task CreateAsync(Wallet wallet)
+        public async Task CreateWalletDalAsync(Wallet wallet)
         {
             try
             {
@@ -43,30 +43,22 @@ namespace WalletProject.DAL.Repositories
 
         }
 
-        public async Task UpdateRepositoryAsync(Guid idWallet,Guid idAccount, WalletInputModel walletInputModel)
+        public async Task UpdateBankAccountBalanceDalAsync(Guid idAccount, double balance)
         {
             try
             {
+                var newWallet = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.Id == idAccount);
+                newWallet.Balance += balance;
+                if(newWallet.Balance<0) { newWallet.Balance = 0; }
                 
-
-
-               var newWallet=  await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == idWallet && x.Accounts.Where(y => y.Id == idAccount).Any());
-                for (int i = 0; i < newWallet.Accounts.Count(); i++)
-                {
-                    if (newWallet.Accounts[i].Id == idAccount)
-                    {
-                        newWallet.Accounts[i].Balance += walletInputModel.BankAccountModel.Balance;
-                        if (newWallet.Accounts[i].Balance < 0) { newWallet.Accounts[i].Balance = 0; }
-                        break;
-                    }
-
-                }
                 await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                throw new Exception("UpdateRepository не работает");
+                throw new Exception("UpdateBankAccountBalanceDalAsync не работает");
             }
         }
+
+        
     }
 }

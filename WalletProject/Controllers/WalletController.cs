@@ -31,14 +31,14 @@ namespace WalletProject.Controllers
         [HttpPost]
         public async Task Post([FromBody] WalletInputModel walletInputModel)
         {
-            await _walletLogic.CreateAsync(walletInputModel);
+            await _walletLogic.CreateWalletBllAsync(walletInputModel);
         }
 
         // PUT api/<WalletController>/5
-        [HttpPut("{id}")]
-        public async Task Put(Guid idWallet,Guid idAccount, [FromBody] WalletInputModel walletInputModel)
+        [HttpPut()]
+        public async Task PutBankAccountBalance(Guid idAccount, [FromBody] double balance)
         {
-            await _walletLogic.UpdateAsync(idWallet,idAccount, walletInputModel);
+            await _walletLogic.UpdateBankAccountBalanceBllAsync(idAccount, balance);
         }
 
         // DELETE api/<WalletController>/5

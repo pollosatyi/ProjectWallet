@@ -15,22 +15,29 @@ namespace WalletProject.BLLLogic
             _walletRepository = walletRepository;
         }
 
-        public async Task CreateAsync(WalletInputModel walletInputModel)
+        public async Task CreateWalletBllAsync(WalletInputModel walletInputModel)
         {
-            BankAccount bankAccount = new BankAccount()
+            try
             {
-                Currency = walletInputModel.BankAccountModel.Currency,
-                Balance=walletInputModel.BankAccountModel.Balance
+                BankAccount bankAccount = new BankAccount()
+                {
+                    Currency = walletInputModel.BankAccountModel.Currency,
+                    Balance = walletInputModel.BankAccountModel.Balance
 
 
-            };
-            Wallet wallet = new Wallet();
-            wallet.Accounts.Add(bankAccount);
+                };
+                Wallet wallet = new Wallet();
+                wallet.Accounts.Add(bankAccount);
+                await _walletRepository.CreateWalletDalAsync(wallet);
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine("CreateWalletBllAsync не работает");
+            }
+
+
             
-
-
             
-            await _walletRepository.CreateAsync(wallet);
         }
 
         public async Task<Wallet> GetAsync(Guid id)
@@ -40,9 +47,9 @@ namespace WalletProject.BLLLogic
             
         }
 
-        public async Task UpdateAsync(Guid idWallet,Guid idAccount, WalletInputModel walletInputModel)
+        public async Task UpdateBankAccountBalanceBllAsync(Guid idAccount, double balance)
         {
-           await _walletRepository.UpdateRepositoryAsync(idWallet,idAccount,walletInputModel);
+           await _walletRepository.UpdateBankAccountBalanceDalAsync(idAccount,balance);
         }
     }
 }
