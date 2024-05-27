@@ -42,9 +42,12 @@ namespace WalletProject.Controllers
         }
 
         // DELETE api/<WalletController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{idWallet}")]
+        public async Task DeleteWallet(Guid idWallet)
         {
+            await _walletLogic.DeleteWalletBll(idWallet);
+
+
         }
     }
 }

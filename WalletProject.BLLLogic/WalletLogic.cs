@@ -40,6 +40,11 @@ namespace WalletProject.BLLLogic
             
         }
 
+        public async Task DeleteWalletBll(Guid idWallet)
+        {
+            await _walletRepository.DeleteWalletDal(idWallet);
+        }
+
         public async Task<Wallet> GetWalletBllAsync(Guid id)
         {
             var wallet = await _walletRepository.GetWalletDalAsync(id);

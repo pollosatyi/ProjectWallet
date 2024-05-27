@@ -8,5 +8,6 @@ namespace WalletProject.BLLlogic.Extention
         Task CreateWalletBllAsync(WalletInputModel walletInputModel);
         Task<Wallet> GetWalletBllAsync(Guid id);
         Task UpdateBankAccountBalanceBllAsync(Guid idAccount,double balance);
+        Task DeleteWalletBll(Guid idWallet);
     }
 }

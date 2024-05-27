@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Security.Principal;
 using WalletProject.Common.Entities.Users.DB;
 using WalletProject.Common.Entities.Wallets.Accounts.BankAccounts;
 using WalletProject.Common.Entities.Wallets.DbWallet;
@@ -28,6 +29,20 @@ namespace WalletProject.DAL.Repositories
             {
                 throw new Exception("WalletRepository не работает");
             }
+        }
+
+        public async Task DeleteWalletDal(Guid idWallet)
+        {
+            try
+            {
+                _dbContext.Wallets.Remove(await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == idWallet));
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("DeleteWalletDal не работает");
+            }
+            
         }
 
         public async Task<Wallet> GetWalletDalAsync(Guid id)

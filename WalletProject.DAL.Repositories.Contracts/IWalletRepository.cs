@@ -9,5 +9,6 @@ namespace WalletProject.DAL.Repositories.Contracts
         Task CreateWalletDalAsync(Wallet wallet);
         Task<Wallet> GetWalletDalAsync(Guid id);
         Task UpdateBankAccountBalanceDalAsync(Guid idAccount,double balance);
+        Task DeleteWalletDal(Guid idWallet);
     }
 }
