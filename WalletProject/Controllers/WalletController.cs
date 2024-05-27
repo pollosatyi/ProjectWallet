@@ -24,7 +24,7 @@ namespace WalletProject.Controllers
         [HttpGet("{id}")]
         public async Task<Wallet> Get(Guid id)
         {
-            return await _walletLogic.GetAsync(id);
+            return await _walletLogic.GetWalletBllAsync(id);
         }
 
         // POST api/<WalletController>
