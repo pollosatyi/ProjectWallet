@@ -30,7 +30,7 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
-        public async Task<Wallet> GetWalletAsync(Guid id)
+        public async Task<Wallet> GetWalletDalAsync(Guid id)
         {
             try
             {

@@ -40,9 +40,9 @@ namespace WalletProject.BLLLogic
             
         }
 
-        public async Task<Wallet> GetAsync(Guid id)
+        public async Task<Wallet> GetWalletBllAsync(Guid id)
         {
-            var wallet = await _walletRepository.GetWalletAsync(id);
+            var wallet = await _walletRepository.GetWalletDalAsync(id);
             return wallet;
             
         }

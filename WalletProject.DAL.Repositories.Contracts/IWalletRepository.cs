@@ -7,7 +7,7 @@ namespace WalletProject.DAL.Repositories.Contracts
     public interface IWalletRepository
     {
         Task CreateWalletDalAsync(Wallet wallet);
-        Task<Wallet> GetWalletAsync(Guid id);
+        Task<Wallet> GetWalletDalAsync(Guid id);
         Task UpdateBankAccountBalanceDalAsync(Guid idAccount,double balance);
     }
 }
