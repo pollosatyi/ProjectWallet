@@ -1,4 +1,5 @@
 ﻿using WalletProject.Common.Entities.Enum;
+using WalletProject.Common.Entities.Wallets.DbWallet;
 
 namespace WalletProject.Common.Entities.Wallets.Accounts.BankAccounts
 {
@@ -7,9 +8,10 @@ namespace WalletProject.Common.Entities.Wallets.Accounts.BankAccounts
         public Guid Id { get; set; }
         public Currency Currency { get; set; }
 
-        public double Balance { get; set; } = 0;
+        public double Balance { get; set; }
 
-        
+        public Guid WalletId { get; set; }
+        public Wallet Wallet { get; set; }
 
     }
 

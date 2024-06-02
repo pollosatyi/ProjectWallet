@@ -19,25 +19,15 @@ namespace WalletProject.BLLLogic
         {
             try
             {
-                BankAccount bankAccount = new BankAccount()
-                {
-                    Currency = walletInputModel.BankAccountModel.Currency,
-                    Balance = walletInputModel.BankAccountModel.Balance
-
-
-                };
                 Wallet wallet = new Wallet();
-                wallet.Accounts.Add(bankAccount);
-                await _walletRepository.CreateWalletDalAsync(wallet);
+                await _walletRepository.CreateAsync(wallet, walletInputModel.UserId);
 
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("CreateWalletBllAsync не работает");
             }
 
-
-            
-            
         }
 
         public async Task DeleteWalletBll(Guid idWallet)

@@ -6,9 +6,7 @@ namespace WalletProject.Common.Entities.Wallets.WalletInputModels
 {
     public class WalletInputModel
     {
-        public BankAccountModel? BankAccountModel { get; set; }
-
-        
+        public Guid UserId { get; set; }
     }
 
 }

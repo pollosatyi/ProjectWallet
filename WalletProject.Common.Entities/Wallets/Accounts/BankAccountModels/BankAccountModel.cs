@@ -9,11 +9,9 @@ namespace WalletProject.Common.Entities.Wallets.Accounts.BankAccountModels
 {
     public class BankAccountModel
     {
-        
         public Currency Currency { get; set; }
+        public double Balance { get; set; }
+        public Guid WalletId { get; set; }
 
-        public double Balance { get; set; } = 0;
-
-        
     }
 }

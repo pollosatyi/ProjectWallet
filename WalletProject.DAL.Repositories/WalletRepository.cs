@@ -17,11 +17,18 @@ namespace WalletProject.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task CreateWalletDalAsync(Wallet wallet)
+        public async Task CreateAsync(Wallet wallet, Guid userId)
         {
             try
             {
-                await _dbContext.Wallets.AddAsync(wallet);
+                var user = _dbContext.Users.FirstOrDefault(u => u.Id == userId);
+
+                if (user == null)
+                {
+                    throw new Exception("User not found");
+                }
+
+                user.Wallet = wallet;
                 await _dbContext.SaveChangesAsync();
 
             }
@@ -30,7 +37,6 @@ namespace WalletProject.DAL.Repositories
                 throw new Exception("WalletRepository не работает");
             }
         }
-
         public async Task DeleteWalletDal(Guid idWallet)
         {
             try
