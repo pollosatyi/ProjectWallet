@@ -37,6 +37,12 @@ namespace WalletProject.DAL.Repositories
                 throw new Exception("WalletRepository не работает");
             }
         }
+
+        public Task CreateWalletDalAsync(Wallet wallet)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task DeleteWalletDal(Guid idWallet)
         {
             try
