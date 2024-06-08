@@ -39,13 +39,13 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
-        public void Delete(string name)
+        public async Task Delete(string name)
         {
             try
             {
-                var user = _dbContext.Users.FirstOrDefault(x => x.FirstName == name);
+                var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.FirstName == name);
                 _dbContext.Users.Remove(user);
-                _dbContext.SaveChangesAsync();
+                await _dbContext.SaveChangesAsync();
 
             }
             catch (Exception ex)

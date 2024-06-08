@@ -7,7 +7,7 @@ namespace WalletProject.DAL.Repositories.Contracts
     {
         Task CreateAsync(User user);
         Task<User> GetAsync(string name);
-        void Delete(string name);
+        Task Delete(string name);
         Task UpdateAsync(Guid id, UserUpdateModel userUpdate);
     }
 }

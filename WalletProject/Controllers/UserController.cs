@@ -44,9 +44,9 @@ namespace WalletProject.Controllers
 
         // DELETE api/<UserController>/5
         [HttpDelete("{name}")]
-        public void Delete([FromBody] string name)
+        public async Task Delete([FromBody] string name)
         {
-            _userLogic.Delete(name);
+            await _userLogic.Delete(name);
         }
     }
 }

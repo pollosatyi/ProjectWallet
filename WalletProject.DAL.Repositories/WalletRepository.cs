@@ -61,7 +61,8 @@ namespace WalletProject.DAL.Repositories
         {
             try
             {
-                return await _dbContext.Wallets.FirstOrDefaultAsync(x=>x.Id==id);
+                var wallet = await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == id);
+                return wallet;
 
             }catch (Exception ex)
             {

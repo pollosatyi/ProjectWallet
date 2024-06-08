@@ -18,35 +18,35 @@ namespace WalletProject.Controllers
 
         // GET: api/<BankAccountController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET api/<BankAccountController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<string> Get(int id)
         {
             return "value";
         }
 
         // POST api/<BankAccountController>
         [HttpPost]
-        public void Post([FromBody] BankAccountModel bankAccountModel)
+        public async Task Post([FromBody] BankAccountModel bankAccountModel)
         {
-            _bankAccountLogic.CreateAsync(bankAccountModel);
+           await _bankAccountLogic.CreateAsync(bankAccountModel);
 
         }
 
         // PUT api/<BankAccountController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/<BankAccountController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
         }
     }

@@ -35,7 +35,7 @@ namespace WalletProject.BLLLogic
 
         }
 
-        public void Delete(string name)
+        public async Task Delete(string name)
         {
             _userRepository.Delete(name);
         }
