@@ -38,12 +38,9 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
-        public Task CreateWalletDalAsync(Wallet wallet)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public async Task DeleteWalletDal(Guid idWallet)
+        public async Task Delete(Guid idWallet)
         {
             try
             {
@@ -52,12 +49,12 @@ namespace WalletProject.DAL.Repositories
             }
             catch (Exception ex)
             {
-                throw new Exception("DeleteWalletDal не работает");
+                throw new Exception("Delete не работает");
             }
             
         }
 
-        public async Task<Wallet> GetWalletDalAsync(Guid id)
+        public async Task<Wallet> GetAsync(Guid id)
         {
             try
             {
@@ -71,21 +68,7 @@ namespace WalletProject.DAL.Repositories
 
         }
 
-        public async Task UpdateBankAccountBalanceDalAsync(Guid idAccount, double balance)
-        {
-            try
-            {
-                var newWallet = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.Id == idAccount);
-                newWallet.Balance += balance;
-                if(newWallet.Balance<0) { newWallet.Balance = 0; }
-                
-                await _dbContext.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("UpdateBankAccountBalanceDalAsync не работает");
-            }
-        }
+       
 
         
     }

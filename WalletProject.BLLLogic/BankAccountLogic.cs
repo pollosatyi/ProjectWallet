@@ -24,7 +24,7 @@ namespace WalletProject.BLLLogic
 
         public async Task CreateAsync(BankAccountModel bankAccountModel)
         {
-            var wallet = await _walletRepository.GetWalletDalAsync(bankAccountModel.WalletId);
+            var wallet = await _walletRepository.GetAsync(bankAccountModel.WalletId);
 
             if (wallet == null)
             {

@@ -15,7 +15,7 @@ namespace WalletProject.BLLLogic
             _walletRepository = walletRepository;
         }
 
-        public async Task CreateWalletBllAsync(WalletInputModel walletInputModel)
+        public async Task CreateAsync(WalletInputModel walletInputModel)
         {
             try
             {
@@ -33,21 +33,17 @@ namespace WalletProject.BLLLogic
 
         }
 
-        public async Task DeleteWalletBll(Guid idWallet)
+        public async Task Delete(Guid idWallet)
         {
-            await _walletRepository.DeleteWalletDal(idWallet);
+            await _walletRepository.Delete(idWallet);
         }
 
-        public async Task<Wallet> GetWalletBllAsync(Guid id)
+        public async Task<Wallet> GetAsync(Guid id)
         {
-            var wallet = await _walletRepository.GetWalletDalAsync(id);
+            var wallet = await _walletRepository.GetAsync(id);
             return wallet;
             
         }
 
-        public async Task UpdateBankAccountBalanceBllAsync(Guid idAccount, double balance)
-        {
-           await _walletRepository.UpdateBankAccountBalanceDalAsync(idAccount,balance);
-        }
     }
 }
