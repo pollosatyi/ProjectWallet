@@ -17,11 +17,11 @@ namespace WalletProject.DAL.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task CreateAsync(Wallet wallet, Guid userId)
+        public async Task CreateAsync(Wallet wallet)
         {
             try
             {
-                var user = _dbContext.Users.FirstOrDefault(u => u.Id == userId);
+                var user = _dbContext.Users.FirstOrDefault(u => u.Id == wallet.UserId);
 
                 if (user == null)
                 {

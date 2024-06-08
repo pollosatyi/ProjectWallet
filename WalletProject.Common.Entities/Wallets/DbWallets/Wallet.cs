@@ -11,5 +11,9 @@ namespace WalletProject.Common.Entities.Wallets.DbWallet
         public List<BankAccount> Accounts { get; set; } = new();
         public User User { get; set; }
 
+        public Guid UserId { get; set; }
+
+
+
     }
 }

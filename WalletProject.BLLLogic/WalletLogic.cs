@@ -19,8 +19,11 @@ namespace WalletProject.BLLLogic
         {
             try
             {
-                Wallet wallet = new Wallet();
-                await _walletRepository.CreateAsync(wallet, walletInputModel.UserId);
+                Wallet wallet = new Wallet() {
+                    UserId = walletInputModel.UserId
+
+                };
+                await _walletRepository.CreateAsync(wallet);
 
             }
             catch (Exception ex)
