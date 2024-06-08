@@ -40,6 +40,7 @@ namespace WalletProject.BLLLogic
 
         public async Task<Wallet> GetAsync(Guid id)
         {
+           // List<BankAccount> bankAccounts
             var wallet = await _walletRepository.GetAsync(id);
             return wallet;
             

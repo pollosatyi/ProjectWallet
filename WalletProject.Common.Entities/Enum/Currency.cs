@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WalletProject.Common.Entities.Enum
 {
-    public enum Currency
+    public enum CurrencyEnum
     {
-        Rub=1, Usd=2, Eur=3
+        RUB=1, USD=2, EUR=3
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalletProject.BLLlogic.Extention;
+using WalletProject.Common.Entities.Wallets.Accounts.BankAccounts;
 using WalletProject.Common.Entities.Wallets.DbWallet;
 using WalletProject.Common.Entities.Wallets.WalletInputModels;
 
@@ -22,7 +23,7 @@ namespace WalletProject.Controllers
 
         // GET api/<WalletController>/5
         [HttpGet("{id}")]
-        public async Task<Wallet> Get(Guid id)
+        public async Task<List<BankAccount>> Get(Guid id)
         {
             return await _walletLogic.GetAsync(id);
         }
