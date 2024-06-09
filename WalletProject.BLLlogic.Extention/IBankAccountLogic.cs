@@ -12,5 +12,6 @@ namespace WalletProject.BLLlogic.Extention
     {
         Task CreateAsync(BankAccountModel bankAccountModel);
         Task<BankAccount> GetAsync(Guid id);
+        Task PutAsync(Guid id, double balance);
     }
 }

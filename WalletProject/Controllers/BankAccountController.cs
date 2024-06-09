@@ -25,11 +25,11 @@ namespace WalletProject.Controllers
         }
 
         // GET api/<BankAccountController>/5
-        [HttpGet("{id}")]
-        public async Task<string> Get(int id)
-        {
-            return "value";
-        }
+        //[HttpGet("{id}")]
+        //public async Task<string> Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST api/<BankAccountController>
         [HttpPost]
@@ -41,8 +41,9 @@ namespace WalletProject.Controllers
 
         // PUT api/<BankAccountController>/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] string value)
+        public async Task Put(Guid id, [FromBody] double balance)
         {
+            await _bankAccountLogic.PutAsync(id,balance);
         }
 
         // DELETE api/<BankAccountController>/5

@@ -11,5 +11,6 @@ namespace WalletProject.DAL.Repositories.Contracts
     {
         Task CreateAsync(BankAccount bankAccont);
         Task<BankAccount> GetAsync(Guid id);
+        Task PutAsync(Guid id, double balance);
     }
 }

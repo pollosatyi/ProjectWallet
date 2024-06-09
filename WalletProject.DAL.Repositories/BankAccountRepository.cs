@@ -41,13 +41,33 @@ namespace WalletProject.DAL.Repositories
                bankAccount=  await _dbContext.Accounts.FirstOrDefaultAsync(x => x.Id == id);
                 if (bankAccount == null)
                 {
-                    throw new Exception("счета с таким id нет");
+                    Console.WriteLine("счета с таким id нет");
                 }
             } catch (Exception ex)
             {
                 Console.WriteLine("GetAsync не работает");
             }
             return bankAccount;
+        }
+
+        public async Task PutAsync(Guid id, double balance)
+        {
+            try
+            {
+                var bankAccount = new BankAccount();
+                bankAccount = await _dbContext.Accounts.FirstOrDefaultAsync(x => x.Id == id);
+                if (bankAccount == null)
+                {
+                    Console.WriteLine("Такого счета нет");return;
+                }
+                bankAccount.Balance += balance;
+                await _dbContext.SaveChangesAsync();
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine("PutAsync не работает");
+            }
+
         }
     }
 }
