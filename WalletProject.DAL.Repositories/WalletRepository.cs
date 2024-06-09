@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Principal;
 using WalletProject.Common.Entities.Users.DB;
 using WalletProject.Common.Entities.Wallets.Accounts.BankAccounts;
@@ -58,18 +59,39 @@ namespace WalletProject.DAL.Repositories
         {
             try
             {
-                var wallet = await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == id);
-                return wallet;
+                return await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == id);
+               // return  wallet;
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception("кошелька с таким id нет");
             }
 
         }
 
-       
+        public async Task<List<BankAccount>> GetListBankAccountsAsync(Guid id)
+        {
+            try
+            {
+                var list=new List<BankAccount>();
+                var wallet= await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == id);
+                if (wallet == null)
+                {
+                    throw new Exception("кошелька с таким id нет");
+                }
+                foreach(var x in wallet.Accounts)
+                {
+                    list.Add(x);
+                }
+                return list;
 
-        
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("GetListBankAccountsAsync ошибка");
+            }
+
+        }
     }
 }

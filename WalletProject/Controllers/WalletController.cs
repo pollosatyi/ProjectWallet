@@ -16,13 +16,13 @@ namespace WalletProject.Controllers
 
         public WalletController(IWalletLogic walletLogic)
         {
-            _walletLogic = walletLogic;  
+            _walletLogic = walletLogic;
         }
         // GET: api/<WalletController>
-       
+
 
         // GET api/<WalletController>/5
-        
+
 
         // POST api/<WalletController>
         [HttpPost]
@@ -31,8 +31,20 @@ namespace WalletProject.Controllers
             await _walletLogic.CreateAsync(walletInputModel);
         }
 
-       
-        
+        //[HttpGet("{walletId1}")]
+        //public async Task<Wallet> Get(Guid walletId)
+        //{
+        //    return await _walletLogic.GetAsync(walletId);
+        //}
+
+
+        [HttpGet("{walletId2}")]
+        public async Task<List<BankAccount>> GetAllBankAccount(Guid walletId)
+        {
+            return await _walletLogic.GetListBankAccountsAsync(walletId);
+        }
+
+
         // DELETE api/<WalletController>/5
         [HttpDelete("{idWallet}")]
         public async Task DeleteWallet(Guid idWallet)
