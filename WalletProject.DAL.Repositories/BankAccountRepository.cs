@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,23 @@ namespace WalletProject.DAL.Repositories
                 Console.WriteLine("BankAccountRepository не работает");
             }
 
+        }
+
+        public async Task<BankAccount> GetAsync(Guid id)
+        {
+           var bankAccount=new BankAccount();
+            try
+            {
+               bankAccount=  await _dbContext.Accounts.FirstOrDefaultAsync(x => x.Id == id);
+                if (bankAccount == null)
+                {
+                    throw new Exception("счета с таким id нет");
+                }
+            } catch (Exception ex)
+            {
+                Console.WriteLine("GetAsync не работает");
+            }
+            return bankAccount;
         }
     }
 }

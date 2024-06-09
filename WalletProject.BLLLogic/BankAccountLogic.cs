@@ -42,5 +42,10 @@ namespace WalletProject.BLLLogic
 
 
         }
+
+        public async Task<BankAccount> GetAsync(Guid id)
+        {
+            return await _bankAccountRepository.GetAsync(id);
+        }
     }
 }

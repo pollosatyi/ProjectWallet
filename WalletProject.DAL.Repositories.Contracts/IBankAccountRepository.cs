@@ -10,5 +10,6 @@ namespace WalletProject.DAL.Repositories.Contracts
     public interface IBankAccountRepository
     {
         Task CreateAsync(BankAccount bankAccont);
+        Task<BankAccount> GetAsync(Guid id);
     }
 }
