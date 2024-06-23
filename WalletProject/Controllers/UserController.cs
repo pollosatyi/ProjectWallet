@@ -28,6 +28,7 @@ namespace WalletProject.Controllers
         }
 
         // POST api/<UserController>
+        //работает
         [HttpPost]
         public async Task Post([FromBody] UserInputModel userInputModel)
         {
