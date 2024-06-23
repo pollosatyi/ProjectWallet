@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WalletProject.BLLlogic.Extention\WalletProject.BLLlogic.Extention.csproj" />
     <ProjectReference Include="..\WalletProject.DAL.Repositories.Contracts\WalletProject.DAL.Repositories.Contracts.csproj" />
   </ItemGroup>

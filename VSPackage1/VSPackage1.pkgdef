@@ -1,0 +1,24 @@
+﻿[$RootKey$\Packages\{ec675690-d348-4f0a-bece-c424fde747f1}]
+@="VSPackage1 Package"
+"InprocServer32"="$PackageFolder$\VSPackage1.dll"
+"CompanyName"="Company"
+"ProductName"="Package Name"
+"ProductVersion"="1.0"
+
+[$RootKey$\Packages\{ec675690-d348-4f0a-bece-c424fde747f1}\SatelliteDll]
+"DllName"="VSPackage1UI.dll"
+"Path"="$PackageFolder$"
+
+[$RootKey$\Menus]
+"{ec675690-d348-4f0a-bece-c424fde747f1}"=", 1000, 1"
+
+[$RootKey$\InstalledProducts\VSPackage1]
+@="#100"
+"Package"="{ec675690-d348-4f0a-bece-c424fde747f1}"
+"ProductDetails"="#102"
+"LogoID"="#400"
+"PID"="1.0"
+"UseInterface"=dword:00000000
+
+
+
