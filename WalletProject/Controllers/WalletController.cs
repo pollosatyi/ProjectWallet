@@ -18,13 +18,9 @@ namespace WalletProject.Controllers
         {
             _walletLogic = walletLogic;
         }
-        // GET: api/<WalletController>
+        
 
 
-        // GET api/<WalletController>/5
-
-
-        // POST api/<WalletController>
         //работает
         [HttpPost]
         public async Task Post([FromBody] WalletInputModel walletInputModel)

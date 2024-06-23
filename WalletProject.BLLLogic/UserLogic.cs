@@ -46,6 +46,12 @@ namespace WalletProject.BLLLogic
             return user;
         }
 
+        public async Task<User> GetUserAsync(Guid id)
+        {
+           var user= await _userRepository.GetUserAsync(id); 
+            return user;
+        }
+
         public async Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel)
         {
             await _userRepository.UpdateAsync(id, userUpdateModel);

@@ -74,5 +74,9 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
+        public async Task<User> GetUserAsync(Guid id)
+        {
+            return _dbContext.Users.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

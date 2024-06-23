@@ -10,6 +10,8 @@ namespace WalletProject.BLLlogic.Extention
 
         Task<User> GetAsync(string name);
 
+        Task<User> GetUserAsync(Guid id);
+
         Task Delete(string name);
 
         Task UpdateAsync(Guid id, UserUpdateModel userUpdateModel);

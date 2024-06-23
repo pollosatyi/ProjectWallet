@@ -20,12 +20,21 @@ namespace WalletProject.Controllers
         }
 
 
-        // GET api/<UserController>/5
-        [HttpGet("{name}")]
-        public async Task<User> GetFirstName(string name)
+        //работает, но метод под вопросом
+        //[HttpGet("{name}")]
+        //public async Task<User> GetFirstName(string name)
+        //{
+        //    return await _userLogic.GetAsync(name);
+        //}
+
+
+        //работает
+        [HttpGet("{id}")]
+        public async Task<User> GetUser(Guid id)
         {
-            return await _userLogic.GetAsync(name);
+            return await _userLogic.GetUserAsync(id);
         }
+
 
         // POST api/<UserController>
         //работает

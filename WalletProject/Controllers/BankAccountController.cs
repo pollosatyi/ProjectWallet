@@ -31,7 +31,7 @@ namespace WalletProject.Controllers
         //    return "value";
         //}
 
-        // POST api/<BankAccountController>
+        //работает
         [HttpPost]
         public async Task Post([FromBody] BankAccountModel bankAccountModel)
         {
