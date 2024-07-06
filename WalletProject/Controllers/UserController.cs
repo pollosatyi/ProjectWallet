@@ -13,23 +13,26 @@ namespace WalletProject.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserLogic _userLogic;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserLogic userLogic)
+        public UserController(IUserLogic userLogic, ILogger<UserController> logger)
         {
             _userLogic = userLogic;
+            _logger = logger;
         }
 
 
         //работает, но метод под вопросом
-        //[HttpGet("{name}")]
-        //public async Task<User> GetFirstName(string name)
-        //{
-        //    return await _userLogic.GetAsync(name);
-        //}
+        [HttpGet("name/{name}")]
+        public async Task<User> GetFirstName(string name)
+        {
+            _logger.LogInformation("работает");
+            return await _userLogic.GetAsync(name);
+        }
 
 
         //работает
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<User> GetUser(Guid id)
         {
             return await _userLogic.GetUserAsync(id);

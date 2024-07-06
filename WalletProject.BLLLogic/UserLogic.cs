@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.Extensions.Logging;
 using System.Security.Cryptography;
 using WalletProject.BLLlogic.Extention;
 using WalletProject.Common.Entities.Users.DB;
@@ -11,6 +12,7 @@ namespace WalletProject.BLLLogic
     public class UserLogic : IUserLogic
     {
         private IUserRepository _userRepository;
+        private readonly ILogger<UserLogic> _logger;
 
         public UserLogic(IUserRepository userRepository)
         {
