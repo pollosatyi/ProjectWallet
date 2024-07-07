@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using WalletProject.Common.Entities.Users.DB;
 using WalletProject.Common.Entities.Users.UserUpdateModels;
 using WalletProject.DAL.Repositories.Contracts;
@@ -9,10 +10,12 @@ namespace WalletProject.DAL.Repositories
     public class UserRepository : IUserRepository
     {
         private readonly DBContext _dbContext;
+        private readonly ILogger<UserRepository> _logger;
 
-        public UserRepository(DBContext dbContext)
+        public UserRepository(DBContext dbContext, ILogger<UserRepository> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
         public async Task CreateAsync(User user)
         {
@@ -23,6 +26,7 @@ namespace WalletProject.DAL.Repositories
             }
             catch (Exception ex)
             {
+                _logger.LogCritical();
                 throw new Exception("UserRepository CreateAsync не работает");
             }
         }
