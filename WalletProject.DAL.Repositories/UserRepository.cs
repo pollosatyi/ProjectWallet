@@ -26,7 +26,7 @@ namespace WalletProject.DAL.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogCritical();
+                //_logger.LogCritical();
                 throw new Exception("UserRepository CreateAsync не работает");
             }
         }

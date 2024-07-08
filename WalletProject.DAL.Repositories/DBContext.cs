@@ -16,7 +16,7 @@ namespace WalletProject.DAL.Repositories
         
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
     }
 }
