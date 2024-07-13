@@ -13,12 +13,12 @@ namespace WalletProject.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserLogic _userLogic;
-        private readonly ILogger<UserController> _logger;
+       // private readonly ILogger<UserController> _logger;
 
         public UserController(IUserLogic userLogic, ILogger<UserController> logger)
         {
             _userLogic = userLogic;
-            _logger = logger;
+            //_logger = logger;
         }
 
 
@@ -26,7 +26,7 @@ namespace WalletProject.Controllers
         [HttpGet("name/{name}")]
         public async Task<User> GetUserByName(string name)
         {
-            _logger.LogInformation("ошибка в UserController метод GetUserByName");
+            //_logger.LogInformation("ошибка в UserController метод GetUserByName");
             return await _userLogic.GetAsync(name);
         }
 
@@ -35,7 +35,7 @@ namespace WalletProject.Controllers
         [HttpGet("id/{id}")]
         public async Task<User> GetUserById(Guid id)
         {
-            _logger.LogDebug("ошибка в UserController метод GetUserById");
+           // _logger.LogDebug("ошибка в UserController метод GetUserById");
             return await _userLogic.GetUserAsync(id);
         }
 
@@ -45,7 +45,7 @@ namespace WalletProject.Controllers
         [HttpPost]
         public async Task PostUserAsync([FromBody] UserInputModel userInputModel)
         {
-            _logger.LogError("ошибка в UserController метод PostUserAsync");
+           // _logger.LogError("ошибка в UserController метод PostUserAsync");
             await _userLogic.CreateAsync(userInputModel);
         }
 
@@ -53,7 +53,7 @@ namespace WalletProject.Controllers
         [HttpPut("{id}")]
         public async Task PutUserAsync(Guid id, [FromBody] UserUpdateModel userUpdateModel)
         {
-            _logger.LogError("ошибка в UserController метод PutUserAsync");
+            //_logger.LogError("ошибка в UserController метод PutUserAsync");
             await _userLogic.UpdateAsync(id, userUpdateModel);
 
         }
@@ -62,7 +62,7 @@ namespace WalletProject.Controllers
         [HttpDelete("name/{name}")]
         public async Task DeleteUserByName([FromBody] string name)
         {
-            _logger.LogError("ошибка в UserController метод DeleteUserByName");
+            //_logger.LogError("ошибка в UserController метод DeleteUserByName");
             await _userLogic.Delete(name);
         }
     }
