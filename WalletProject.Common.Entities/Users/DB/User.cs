@@ -14,6 +14,10 @@ namespace WalletProject.Common.Entities.Users.DB
         public string Email { get; set; }
         public string Password { get; set; }
         public Sex Sex { get; set; }
-        public Wallet Wallet { get; set; } = null!;
+
+        public Guid WalletId { get; set; }
+        public Wallet? Wallet { get; set; }
+
+
     }
 }

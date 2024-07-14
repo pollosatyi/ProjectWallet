@@ -20,21 +20,25 @@ namespace WalletProject.BLLLogic
         }
         public async Task CreateAsync(UserInputModel userInputModel)
         {
+            
+            
+                User user = new User()
+                {
+                    FirstName = userInputModel.FirstName,
+                    LastName = userInputModel.LastName,
+                    MiddleName = userInputModel.MiddleName,
+                    Phone = userInputModel.Phone,
+                    Age = userInputModel.Age,
+                    Email = userInputModel.Email,
+                    Sex = userInputModel.Sex,
+                    Password = GetHashedPassword(userInputModel.Password)
 
-            User user = new User()
-            {
-                FirstName = userInputModel.FirstName,
-                LastName = userInputModel.LastName,
-                MiddleName = userInputModel.MiddleName,
-                Phone = userInputModel.Phone,
-                Age = userInputModel.Age,
-                Email = userInputModel.Email,
-                Sex = userInputModel.Sex,
-                Password = GetHashedPassword(userInputModel.Password)
+                };
+                await _userRepository.CreateAsync(user);
 
-            };
-            await _userRepository.CreateAsync(user);
-
+            
+                
+            
         }
 
         public async Task Delete(string name)
