@@ -12,8 +12,8 @@ using WalletProject.DAL.Repositories;
 namespace WalletProject.DAL.Repositories.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20240713141551_init2")]
-    partial class init2
+    [Migration("20240714175032_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,6 +60,9 @@ namespace WalletProject.DAL.Repositories.Migrations
 
                     b.Property<int>("Sex")
                         .HasColumnType("integer");
+
+                    b.Property<Guid>("WalletId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -129,8 +132,7 @@ namespace WalletProject.DAL.Repositories.Migrations
 
             modelBuilder.Entity("WalletProject.Common.Entities.Users.DB.User", b =>
                 {
-                    b.Navigation("Wallet")
-                        .IsRequired();
+                    b.Navigation("Wallet");
                 });
 
             modelBuilder.Entity("WalletProject.Common.Entities.Wallets.DbWallet.Wallet", b =>

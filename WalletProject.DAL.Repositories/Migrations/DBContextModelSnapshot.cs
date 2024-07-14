@@ -58,6 +58,9 @@ namespace WalletProject.DAL.Repositories.Migrations
                     b.Property<int>("Sex")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("WalletId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -126,8 +129,7 @@ namespace WalletProject.DAL.Repositories.Migrations
 
             modelBuilder.Entity("WalletProject.Common.Entities.Users.DB.User", b =>
                 {
-                    b.Navigation("Wallet")
-                        .IsRequired();
+                    b.Navigation("Wallet");
                 });
 
             modelBuilder.Entity("WalletProject.Common.Entities.Wallets.DbWallet.Wallet", b =>
