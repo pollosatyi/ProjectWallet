@@ -13,10 +13,12 @@ namespace WalletProject.Controllers
     public class WalletController : ControllerBase
     {
         private readonly IWalletLogic _walletLogic;
+        private readonly IUserLogic _userLogic;
 
-        public WalletController(IWalletLogic walletLogic)
+        public WalletController(IWalletLogic walletLogic,IUserLogic userLogic)
         {
             _walletLogic = walletLogic;
+            _userLogic = userLogic;
         }
         
 
@@ -26,6 +28,8 @@ namespace WalletProject.Controllers
         public async Task Post([FromBody] WalletInputModel walletInputModel)
         {
             await _walletLogic.CreateAsync(walletInputModel);
+            //await _userLogic.UpdateAsync(_walletLogic.);
+
         }
 
         //[HttpGet("{walletId1}")]

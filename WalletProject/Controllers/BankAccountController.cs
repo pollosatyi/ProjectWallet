@@ -17,7 +17,7 @@ namespace WalletProject.Controllers
             _bankAccountLogic = bankAccountLogic;
         }
 
-        // GET: api/<BankAccountController>
+        
         //работает
         [HttpGet]
         public async Task<BankAccount> Get(Guid id)
@@ -25,12 +25,6 @@ namespace WalletProject.Controllers
             return await _bankAccountLogic.GetAsync(id);
         }
 
-        // GET api/<BankAccountController>/5
-        //[HttpGet("{id}")]
-        //public async Task<string> Get(int id)
-        //{
-        //    return "value";
-        //}
 
         //работает
         [HttpPost]
@@ -40,7 +34,7 @@ namespace WalletProject.Controllers
 
         }
 
-        // PUT api/<BankAccountController>/5
+        //работает
         [HttpPut("{id}")]
         public async Task Put(Guid id, [FromBody] double balance)
         {

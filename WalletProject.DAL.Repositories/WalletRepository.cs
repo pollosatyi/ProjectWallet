@@ -33,8 +33,9 @@ namespace WalletProject.DAL.Repositories
                 {
                     throw new Exception("У этого пользователя есть кошелек");
                 }
-                user.Wallet = wallet;
+                await _dbContext.Wallets.AddAsync(wallet);
                 await _dbContext.SaveChangesAsync();
+               
 
             }
             catch (Exception ex)

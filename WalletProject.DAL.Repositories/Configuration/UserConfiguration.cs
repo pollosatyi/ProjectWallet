@@ -18,7 +18,7 @@ namespace WalletProject.DAL.Repositories.Configuration
             builder
                 .HasOne(x => x.Wallet)
                 .WithOne(y => y.User)
-                .HasForeignKey<Wallet>(x=>x.UserId);
+                .HasForeignKey<User>(x=>x.WalletId);
         }
 
         
