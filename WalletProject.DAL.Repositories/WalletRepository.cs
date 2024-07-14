@@ -29,7 +29,8 @@ namespace WalletProject.DAL.Repositories
                     throw new Exception("User not found");
                 }
                 var check=_dbContext.Wallets.FirstOrDefault(u => u.UserId == wallet.UserId);
-                if (check != null) {
+                if (check != null)
+                {
                     throw new Exception("У этого пользователя есть кошелек");
                 }
                 user.Wallet = wallet;

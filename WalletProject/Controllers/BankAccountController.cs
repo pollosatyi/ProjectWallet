@@ -18,6 +18,7 @@ namespace WalletProject.Controllers
         }
 
         // GET: api/<BankAccountController>
+        //работает
         [HttpGet]
         public async Task<BankAccount> Get(Guid id)
         {
