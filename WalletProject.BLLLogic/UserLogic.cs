@@ -81,5 +81,10 @@ namespace WalletProject.BLLLogic
             Buffer.BlockCopy(buffer2, 0, dst, 0x11, 0x20);
             return Convert.ToBase64String(dst);
         }
+
+        public async Task DeleteIdAsync(Guid id)
+        {
+            await _userRepository.DeleteIdAsync(id);
+        }
     }
 }

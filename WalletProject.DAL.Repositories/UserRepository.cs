@@ -43,7 +43,7 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
-        public async Task DeleteId(Guid id)
+        public async Task DeleteIdAsync(Guid id)
         {
             try
             {
@@ -53,7 +53,9 @@ namespace WalletProject.DAL.Repositories
                     _logger.LogWarning("пользователя с таким id нет");
                     return;
                 }
-            } catch (Exception ex)
+                _dbContext.Users.Remove(user);
+            }
+            catch (Exception ex)
             {
 
             }
