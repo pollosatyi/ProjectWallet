@@ -43,12 +43,40 @@ namespace WalletProject.DAL.Repositories
             }
         }
 
+        public async Task DeleteId(Guid id)
+        {
+            try
+            {
+                var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+                if (user == null)
+                {
+                    _logger.LogWarning("пользователя с таким id нет");
+                    return;
+                }
+            } catch (Exception ex)
+            {
+
+            }
+            await _dbContext.SaveChangesAsync();
+        }
+
         public async Task Delete(string name)
         {
             try
             {
                 var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.FirstName == name);
-                _dbContext.Users.Remove(user);
+                //if (user == null)
+                //{
+                //    _logger.LogWarning("Пользователя с таким именем нет");
+                //    return;
+                //}
+                //var wallet = await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == user.WalletId);
+                //if (wallet != null)
+                //{
+                //    _dbContext.Wallets.Remove(wallet);
+                //}
+
+                //_dbContext.Users.Remove(user);
                 await _dbContext.SaveChangesAsync();
 
             }
@@ -63,7 +91,11 @@ namespace WalletProject.DAL.Repositories
         {
             try
             {
-                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+                var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+                if(user == null) {
+                    _logger.LogWarning("Польователя с таким id нет");
+                    return;
+                }
                 user.FirstName = userUpdateModel.FirstName;
                 user.LastName = userUpdateModel.LastName;
                 user.MiddleName = userUpdateModel.MiddleName;

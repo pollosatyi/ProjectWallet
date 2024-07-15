@@ -40,7 +40,7 @@ namespace WalletProject.Controllers
         }
 
 
-        // POST api/<UserController>
+        
         //работает
         [HttpPost]
         public async Task PostUserAsync([FromBody] UserInputModel userInputModel)
@@ -49,7 +49,8 @@ namespace WalletProject.Controllers
             await _userLogic.CreateAsync(userInputModel);
         }
 
-        // PUT api/<UserController>/5
+        
+        //работает
         [HttpPut("{id}")]
         public async Task PutUserAsync(Guid id, [FromBody] UserUpdateModel userUpdateModel)
         {
@@ -59,8 +60,9 @@ namespace WalletProject.Controllers
         }
 
         // DELETE api/<UserController>/5
+
         [HttpDelete("name/{name}")]
-        public async Task DeleteUserByName([FromBody] string name)
+        public async Task DeleteUserByName( string name)
         {
             await _userLogic.Delete(name);
         }
