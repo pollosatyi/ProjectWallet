@@ -57,12 +57,12 @@ namespace WalletProject.DAL.Repositories
             }
             catch (Exception ex)
             {
-
+                _logger.LogError("ошибка в DeleteIdAsync");
             }
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task Delete(string name)
+        public async Task DeleteNameAsync(string name)
         {
             try
             {

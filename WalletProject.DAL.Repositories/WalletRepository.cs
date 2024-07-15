@@ -35,6 +35,8 @@ namespace WalletProject.DAL.Repositories
                 }
                 await _dbContext.Wallets.AddAsync(wallet);
                 await _dbContext.SaveChangesAsync();
+
+
                
 
             }

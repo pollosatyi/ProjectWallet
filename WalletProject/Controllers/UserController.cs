@@ -64,7 +64,7 @@ namespace WalletProject.Controllers
         [HttpDelete("name/{name}")]
         public async Task DeleteUserByName( string name)
         {
-            await _userLogic.Delete(name);
+            await _userLogic.DeleteNameAsync(name);
         }
 
         [HttpDelete("id/{id}")]
