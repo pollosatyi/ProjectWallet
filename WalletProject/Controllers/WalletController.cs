@@ -32,14 +32,14 @@ namespace WalletProject.Controllers
 
         }
 
-        //[HttpGet("{walletId1}")]
-        //public async Task<Wallet> Get(Guid walletId)
-        //{
-        //    return await _walletLogic.GetAsync(walletId);
-        //}
+        [HttpGet("wallet/{walletId}")]
+        public async Task<Wallet> Get(Guid walletId)
+        {
+            return await _walletLogic.GetAsync(walletId);
+        }
 
 
-        [HttpGet("{walletId}")]
+        [HttpGet("ListAccount/{walletId}")]
         public async Task<List<BankAccount>> GetAllBankAccount(Guid walletId)
         {
             return await _walletLogic.GetListBankAccountsAsync(walletId);
