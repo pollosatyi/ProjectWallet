@@ -60,7 +60,7 @@ namespace WalletProject.Controllers
         }
 
         // DELETE api/<UserController>/5
-
+        //работает
         [HttpDelete("name/{name}")]
         public async Task DeleteUserByName( string name)
         {
