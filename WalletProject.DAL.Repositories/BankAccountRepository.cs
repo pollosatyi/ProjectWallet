@@ -23,6 +23,7 @@ namespace WalletProject.DAL.Repositories
             try
             {
                 _dbContext.Accounts.Add(bankAccount);
+               // var wallet = _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == bankAccount.WalletId);
                 await _dbContext.SaveChangesAsync();
 
             }

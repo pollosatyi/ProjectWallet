@@ -52,7 +52,14 @@ namespace WalletProject.DAL.Repositories
         {
             try
             {
-                _dbContext.Wallets.Remove(await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == idWallet));
+                var wallet = await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == idWallet);
+                var user=_dbContext.Users.FirstOrDefault(u => u.WalletId==idWallet);
+                if (user != null)
+                {
+                    user.WalletId = Guid.Empty;
+                }
+                _dbContext.Wallets.Remove(wallet);
+               
                 await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)

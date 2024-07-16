@@ -39,13 +39,13 @@ namespace WalletProject.Controllers
         //}
 
 
-        [HttpGet("{walletId2}")]
+        [HttpGet("{walletId}")]
         public async Task<List<BankAccount>> GetAllBankAccount(Guid walletId)
         {
             return await _walletLogic.GetListBankAccountsAsync(walletId);
         }
 
-
+        //работает
         // DELETE api/<WalletController>/5
         [HttpDelete("{idWallet}")]
         public async Task DeleteWallet(Guid idWallet)
