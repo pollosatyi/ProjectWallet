@@ -53,6 +53,11 @@ namespace WalletProject.DAL.Repositories
                     _logger.LogWarning("пользователя с таким id нет");
                     return;
                 }
+                if (user.WalletId != Guid.Empty)
+                {
+                    var wallet =_dbContext.Wallets.FirstOrDefault(x => x.Id == user.WalletId);
+                    _dbContext.Wallets.Remove(wallet);
+                }
                 _dbContext.Users.Remove(user);
             }
             catch (Exception ex)
@@ -67,24 +72,24 @@ namespace WalletProject.DAL.Repositories
             try
             {
                 var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.FirstName == name);
-                //if (user == null)
-                //{
-                //    _logger.LogWarning("Пользователя с таким именем нет");
-                //    return;
-                //}
-                //var wallet = await _dbContext.Wallets.FirstOrDefaultAsync(x => x.Id == user.WalletId);
-                //if (wallet != null)
-                //{
-                //    _dbContext.Wallets.Remove(wallet);
-                //}
+                if (user == null)
+                {
+                    _logger.LogWarning("Пользователя с таким именем нет");
+                    return;
+                }
+                if (user.WalletId != Guid.Empty)
+                {
+                    var wallet = _dbContext.Wallets.FirstOrDefault(x => x.Id == user.WalletId);
+                    _dbContext.Wallets.Remove(wallet);
+                }
 
-                //_dbContext.Users.Remove(user);
+                _dbContext.Users.Remove(user);
                 await _dbContext.SaveChangesAsync();
 
             }
             catch (Exception ex)
             {
-                throw new Exception("Пользователь не удален");
+                _logger.LogError("ошибка в DeleteNameAsync");
             }
 
         }

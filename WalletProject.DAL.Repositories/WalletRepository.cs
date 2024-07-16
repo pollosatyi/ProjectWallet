@@ -28,16 +28,16 @@ namespace WalletProject.DAL.Repositories
                 {
                     throw new Exception("User not found");
                 }
-                var check=_dbContext.Wallets.FirstOrDefault(u => u.UserId == wallet.UserId);
-                if (check != null)
+                if (user.WalletId!= Guid.Empty)
                 {
                     throw new Exception("У этого пользователя есть кошелек");
                 }
                 await _dbContext.Wallets.AddAsync(wallet);
                 await _dbContext.SaveChangesAsync();
+                user.WalletId = wallet.Id;
+                await _dbContext.SaveChangesAsync();
 
 
-               
 
             }
             catch (Exception ex)
