@@ -20,6 +20,7 @@ namespace WalletProject.DAL.Repositories
 
         public async Task CreateAsync(Wallet wallet)
         {
+            await using var transaction = await _dbContext.Database.BeginTransactionAsync();
             try
             {
                 var user = _dbContext.Users.FirstOrDefault(u => u.Id == wallet.UserId);
@@ -37,11 +38,12 @@ namespace WalletProject.DAL.Repositories
                 user.WalletId = wallet.Id;
                 await _dbContext.SaveChangesAsync();
 
-
+                await transaction.CommitAsync();
 
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 throw new Exception("WalletRepository не работает");
             }
         }
